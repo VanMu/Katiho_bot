@@ -1,0 +1,55 @@
+﻿[
+{
+"brand":"Acura",
+"country":"Япония",
+"model":"CDX",
+"year_begin":"2017","year_end":"2018"
+},
+{
+"brand":"Acura",
+"country":"Япония",
+"model":"MDX",
+"year_begin": "2017",
+"year_end":"2018"
+},
+{"brand": "Acura",
+"country":"Япония","model":"NSX","year_begin":"2015","year_end":"2018"},{"brand":"Acura",
+"country":"Япония",
+"model":"RDX","year_begin":"2013","year_end":"2018"
+},
+{
+"brand":"Acura",
+"country":"Япония","model":"RLX",
+"year_begin":"2013",
+"year_end":"2017"
+},
+{
+"brand":"Acura",
+"country":"Япония","model":"TLX",
+"year_begin":"2015","year_end":"2018"
+},
+{
+"brand":"Alfa Romeo","country":"Италия","model":"147",
+"year_begin":"2000","year_end":"2010"},
+{
+"brand":"Alfa Romeo",
+"country":"Италия",
+"model":"156","year_begin":"1997","year_end":"2005"},
+{
+"brand": "Alfa Romeo","country":"Италия",
+"model":"159",
+"year_begin":"2005","year_end":"2011"
+},
+{"brand":"Alfa Romeo","country":"Италия",
+"model":"166","year_begin":"1998",
+"year_end":"2007"},{"brand": "Alfa Romeo","country":"Италия",
+"model":"4C","year_begin":"2013","year_end":"2018"
+},
+{"brand": "Alfa Romeo",
+"country":"Италия","model":"8C COMPETIZIONE",
+"year_begin":"2008","year_end":"2018"},{"brand":"Alfa Romeo",
+"country":"Италия",
+"model":"8C SPIDER","year_begin":"2009",
+"year_end":"2018"
+}
+]

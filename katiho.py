@@ -1,6 +1,9 @@
 import requests
+import json
+import codecs
 import random
 from config import token
+from config import cars
 
 
 class BotHandler:
@@ -63,23 +66,54 @@ class BotHandler:
         elif text.lower() in greetings_office:
             greet_bot.send_message(chat_id, 'Здравствуй, {}'.format(name))
 
+    def car_seach(self, cars, key):
+        path = 'car2.json'
+        with codecs.open(path, 'r', "utf_8_sig") as f:
+            data = json.loads(f.read())
+            i = 1
+            block_data = []
+            counter = 0
+            while i <= cars:
+                if len(data) > 1:
+                    data_win = data[-i]
+                else:
+                    data_win = data[len(data)]
+                if (data_win['brand']) == key:
+                    block_data.append(data_win)
+                    counter = counter + 1
+                elif (data_win['country']) == key:
+                    block_data.append(data_win)
+                    counter = counter + 1
+                elif (data_win['model']) == key:
+                    block_data.append(data_win)
+                    counter = counter + 1
+                i = i + 1
+        return block_data, counter
+
+
+
+
 
 greet_bot = BotHandler(token) # НЕ ПОТЕРЯЙ!!
+
 
 def main():
     new_offset = None
     while True:
-
         update = greet_bot.get_updates(new_offset)
-        print(update)
         try:
             last_update = greet_bot.get_last_update()
-            print(greet_bot.get_last_update())
             last_update_id = last_update['update_id']
             last_chat_text = last_update['message']['text']
             last_chat_id = last_update['message']['chat']['id']
             last_chat_name = last_update['message']['chat']['first_name']
-
+            # поиск машинок
+            print(last_chat_text)
+            key = last_chat_text
+            print(key)
+            Mm = greet_bot.car_seach(cars, key)
+            print(Mm[0])
+            print(Mm[1])
             # приветствие
             greet_bot.welcome_user(last_chat_id, last_chat_name, last_chat_text)
 
@@ -91,12 +125,11 @@ def main():
 
             #перейти к новому обновлению
             new_offset = last_update_id + 1
-            print(new_offset)
 
         except:
             print("Нет новых сообщений")
             new_offset = last_update_id + 1
-            print(new_offset)
+
 
 
 
